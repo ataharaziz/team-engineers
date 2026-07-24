@@ -93,7 +93,6 @@ export default function ContactForm({
           <div className="mb-2">
             <label
               htmlFor="project"
-              name="project"
               className="mb-3 block text-sm font-medium text-gray-700"
             >
               Project Type
