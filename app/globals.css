@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #0D47A1;
+  --secondary: #1565C0;
+  --dark: #1F2937;
+  --light: #F8FAFC;
+  --white: #FFFFFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-custom {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* ==========================================================
+   DESIGN SYSTEM 2.0
+========================================================== */
+
+/* ---------- Section Layout ---------- */
+
+.section-spacing {
+  @apply py-20 md:py-24;
+}
+
+.section-spacing-sm {
+  @apply py-16;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  @apply rounded-2xl border border-gray-200 bg-white shadow-sm;
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl;
+}
+
+.card-padding {
+  @apply p-10 lg:p-12;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-shadow {
+  box-shadow:
+    0 10px 25px rgba(13, 71, 161, 0.15);
+}
+
+.btn-shadow:hover {
+  box-shadow:
+    0 20px 45px rgba(13, 71, 161, 0.22);
+}
+
+/* ---------- Brand Background ---------- */
+
+.brand-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #0D47A1 0%,
+      #1565C0 100%
+    );
+}
+
+/* ---------- Surface Background ---------- */
+
+.surface {
+  @apply bg-white;
+}
+
+.surface-muted {
+  @apply bg-gray-50;
+}
+
+/* ---------- Animation ---------- */
+
+.animate-default {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift {
+  @apply hover:-translate-y-2;
+}
+
+/* ---------- Focus ---------- */
+
+.focus-brand {
+  @apply focus:outline-none
+         focus:ring-2
+         focus:ring-[#0D47A1]
+         focus:ring-offset-2;
+}
+
+/* ---------- Typography ---------- */
+
+.heading-primary {
+  @apply font-bold tracking-tight text-gray-900;
+}
+
+.text-muted {
+  @apply text-gray-600;
+}
+
+/* ---------- Images ---------- */
+
+.image-cover {
+  @apply h-full w-full object-cover;
+}
+
+/* ==========================================================
+   LAYOUT SYSTEM 3.0
+========================================================== */
+
+/* Consistent content widths */
+
+.content-narrow {
+  @apply max-w-3xl mx-auto;
+}
+
+.content-medium {
+  @apply max-w-5xl mx-auto;
+}
+
+.content-wide {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Section spacing */
+
+.section-gap-sm {
+  @apply mt-10;
+}
+
+.section-gap {
+  @apply mt-16;
+}
+
+.section-gap-lg {
+  @apply mt-20;
+}
+
+/* Grid spacing */
+
+.grid-gap {
+  @apply gap-8;
+}
+
+.grid-gap-lg {
+  @apply gap-12;
+}
+
+/* Common dividers */
+
+.section-divider {
+  @apply border-t border-gray-200;
+}
+
